@@ -1,0 +1,48 @@
+{
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 1, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": [
+    "pulseaudio", 
+    "backlight", 
+    "battery",
+    "clock", 
+    ],
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5, // 5 workspaces by default on every monitor
+        }
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%m/%d %H:%M}"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [""]
+        },
+        "on-click": "pavucontrol"
+    },
+   }
